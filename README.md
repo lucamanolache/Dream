@@ -10,6 +10,8 @@ Dream is a 7B diffusion large language model that achieves competitive performan
 
 ## News
 
+- [2025-06-04]: Dream-Instruct eval code is released.
+- [2025-05-03]: Dream-Base eval code is released.
 - [2025-04-05]: Dream checkpoints and inference code are released.
 - [2025-04-02]: Dream blog is released.
 
