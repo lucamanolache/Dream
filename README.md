@@ -10,7 +10,9 @@ Dream is a 7B diffusion large language model that achieves competitive performan
 
 
 ## News
-
+- [2025-07-15]: We release [Dream-Coder](https://github.com/DreamLM/Dream-Coder) and [DreamOn](https://github.com/DreamLM/DreamOn):
+   - Dream-Coder is a fully open 7B dLLM for code, delivering strong performance, trained exclusively on public data.  
+   - DreamOn tackles the variable-length generation and infilling in dLLM.
 - [2025-06-04]: Dream-Instruct eval code is released.
 - [2025-05-03]: Dream-Base eval code is released.
 - [2025-04-05]: Dream checkpoints and inference code are released.
