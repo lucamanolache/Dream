@@ -1,5 +1,6 @@
 # Dream 7B
 [![Static Badge](https://img.shields.io/badge/📰-Blog-red)](https://hkunlp.github.io/blog/2025/dream/)
+[![Static Badge](https://img.shields.io/badge/📰-Report-yellow)](https://arxiv.org/abs/2508.15487)
 [![Static Badge](https://img.shields.io/badge/📰-Demo-green)](https://huggingface.co/spaces/multimodalart/Dream)
 [![Static Badge](https://img.shields.io/badge/Hugging%20Face%20🤗-Dream%207B_Base-blue)
 ](https://huggingface.co/Dream-org/Dream-v0-Base-7B)
@@ -115,10 +116,10 @@ bash eval_dream_gen_planning.sh
 
 ## Citation
 ```
-@misc{dream2025,
-    title = {Dream 7B},
-    url = {https://hkunlp.github.io/blog/2025/dream},
-    author = {Ye, Jiacheng and Xie, Zhihui and Zheng, Lin and Gao, Jiahui and Wu, Zirui and Jiang, Xin and Li, Zhenguo and Kong, Lingpeng},
-    year = {2025}
+@article{ye2025dream,
+  title={Dream 7B: Diffusion Large Language Models},
+  author={Ye, Jiacheng and Xie, Zhihui and Zheng, Lin and Gao, Jiahui and Wu, Zirui and Jiang, Xin and Li, Zhenguo and Kong, Lingpeng},
+  journal={arXiv preprint arXiv:2508.15487},
+  year={2025}
 }
 ```
