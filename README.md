@@ -10,6 +10,7 @@ Dream is a 7B diffusion large language model that achieves competitive performan
 
 
 ## News
+- [2025-09-26]: We release the training code for Dream, and you can easily fine-tune on your own dataset. Additionally, the training and evaluation code for [Dream-Coder](https://github.com/DreamLM/Dream-Coder) and [DreamOn](https://github.com/DreamLM/DreamOn) are all available now.
 - [2025-07-15]: We release [Dream-Coder](https://github.com/DreamLM/Dream-Coder) and [DreamOn](https://github.com/DreamLM/DreamOn):
    - Dream-Coder is a fully open 7B dLLM for code, delivering strong performance, trained exclusively on public data.  
    - DreamOn tackles the variable-length generation and infilling problem in dLLMs.
@@ -114,6 +115,12 @@ bash eval_dream_gen.sh
 
 # this scripts contains planning tasks: countdown, sudoku, trip-planning, their data are under `data`
 bash eval_dream_gen_planning.sh
+```
+
+## Fine-tuning
+You can perform SFT training on a single node with 8 GPUs with:
+```
+bash examples/run_sft_tulu3.sh 8 output
 ```
 
 ## Citation
