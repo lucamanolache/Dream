@@ -26,7 +26,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.enable_perbatch_cutoff=True \
     data.perbatch_cutoff_type=random_with_input_pad \
     +data.perbatch_cutoff=True \
-    model.partial_pretrain=Dream-org/Dream-Coder-v0-Base-7B \
+    model.partial_pretrain=Dream-org/Dream-v0-Base-7B \
     model.trust_remote_code=True \
     model.enable_gradient_checkpointing=True \
     trainer.default_local_dir=test_exp \
