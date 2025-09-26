@@ -13,21 +13,24 @@ shift 2
 
 torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     -m src.trainer.fsdp_sft_trainer \
-    diffusion.time_reweighting=linear \
+    diffusion.time_reweighting=cart \
     data.train_files=$HOME/data/tulu3/train.parquet \
     data.val_files=$HOME/data/gsm8k/test.parquet \
-    data.max_length=1024 \
+    data.max_length=2048 \
     data.prompt_key=prompt \
     data.response_key=response \
     data.truncation=right \
-    optim.lr=1e-4 \
-    data.micro_batch_size=1 \
-    model.partial_pretrain=Dream-org/Dream-7B-200B-1e-4 \
+    optim.lr=2e-6 \
+    data.train_batch_size=576 \
+    data.micro_batch_size_per_gpu=6 \
+    data.enable_perbatch_cutoff=True \
+    data.perbatch_cutoff_type=random_with_input_pad \
+    +data.perbatch_cutoff=True \
+    model.partial_pretrain=Dream-org/Dream-Coder-v0-Base-7B \
     model.trust_remote_code=True \
-    trainer.default_local_dir=$save_path \
+    model.enable_gradient_checkpointing=True \
+    trainer.default_local_dir=test_exp \
     trainer.project_name=diff-verl \
-    trainer.experiment_name=tulu3-sft-diffllm-instruct-sp2 \
+    trainer.experiment_name=test_exp \
     trainer.logger=['console','wandb'] \
-    trainer.default_hdfs_dir=null $@ \
-    ulysses_sequence_parallel_size=1 \
-    use_remove_padding=true
+    trainer.total_epochs=3 &
