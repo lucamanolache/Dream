@@ -3,7 +3,7 @@ from transformers import AutoModel, AutoTokenizer
 import time
 # Load model and tokenizer
 model_path = "Dream-org/Dream-v0-Instruct-7B"
-model = AutoModel.from_pretrained(model_path, torch_dtype=torch.bfloat16, trust_remote_code=True)
+model = AutoModel.from_pretrained(model_path, torch_dtype=torch.float16, trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
 model = model.to("cuda").eval()
 

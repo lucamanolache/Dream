@@ -17,8 +17,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"Using device: {device}")
 
 try:
-    print("Loading model with bfloat16...")
-    dtype = torch.bfloat16
+    print("Loading model with float16...")
+    dtype = torch.float16
     model = AutoModel.from_pretrained(model_path, torch_dtype=dtype, trust_remote_code=True)
     print(f"Model loaded successfully with {dtype}.")
 except Exception as e:

@@ -161,7 +161,7 @@ if __name__ == "__main__":
             }
     })
     cfg = OmegaConf.merge(default, cfg)
-    model = AutoModel.from_pretrained(cfg.ckpt, torch_dtype=torch.bfloat16, trust_remote_code=True)
+    model = AutoModel.from_pretrained(cfg.ckpt, torch_dtype=torch.float16, trust_remote_code=True)
     tokenizer = AutoTokenizer.from_pretrained(cfg.ckpt, trust_remote_code=True)
     model = model.cuda()
     generator = Generator(model, tokenizer, cfg.gen_params)

@@ -1,0 +1,74 @@
+_wandb:
+    value:
+        cli_version: 0.22.1
+        e:
+            7xxqk56klhx654th3fkr9601vfe5bui5:
+                args:
+                    - diffusion.time_reweighting=cart
+                    - data.train_files=/home/luca/data/tulu3/train.parquet
+                    - data.val_files=/home/luca/data/gsm8k/test.parquet
+                    - data.max_length=2048
+                    - data.prompt_key=prompt
+                    - data.response_key=response
+                    - data.truncation=right
+                    - optim.lr=2e-6
+                    - data.micro_batch_size_per_gpu=4
+                    - data.perbatch_cutoff_type=random_with_input_pad
+                    - model.partial_pretrain=Dream-org/Dream-v0-Base-7B
+                    - model.trust_remote_code=True
+                    - model.enable_gradient_checkpointing=True
+                    - trainer.default_local_dir=save
+                    - trainer.project_name=diff-verl
+                    - trainer.experiment_name=single_gpu_exp
+                    - trainer.logger=[console,wandb]
+                    - trainer.total_epochs=3
+                cpu_count: 16
+                cpu_count_logical: 32
+                disk:
+                    /:
+                        total: "1860808818688"
+                        used: "71108038656"
+                email: luca.manolache@berkeley.edu
+                executable: /home/luca/code/workspace/personal/Dream/.venv/bin/python
+                git:
+                    commit: fd91b8f1d47c5cbe4a8a1674fd9b98045e79d9db
+                    remote: git@github.com:lucamanolache/Dream.git
+                host: desktop
+                memory:
+                    total: "98651947008"
+                os: Linux-6.12.41-x86_64-with-glibc2.40
+                program: -m src.trainer.standard_sft_trainer
+                python: CPython 3.11.13
+                root: /home/luca/code/workspace/personal/Dream
+                startedAt: "2025-10-04T20:45:48.582978Z"
+                writerId: 7xxqk56klhx654th3fkr9601vfe5bui5
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+                - 11
+                - 30
+                - 49
+                - 50
+                - 51
+                - 71
+                - 98
+                - 105
+            "2":
+                - 1
+                - 11
+                - 30
+                - 49
+                - 50
+                - 51
+                - 71
+                - 98
+                - 105
+            "3":
+                - 13
+            "4": 3.11.13
+            "5": 0.22.1
+            "6": 4.57.0
+            "12": 0.22.1
+            "13": linux-x86_64

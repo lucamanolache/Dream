@@ -1,0 +1,51 @@
+Total training steps: 117
+Epoch 1/3:   0%|                                                                                                     | 0/39 [00:01<?, ?it/s]
+Error executing job with overrides: ['diffusion.time_reweighting=cart', 'data.train_files=/home/luca/data/tulu3/train.parquet', 'data.val_files=/home/luca/data/gsm8k/test.parquet', 'data.max_length=2048', 'data.prompt_key=prompt', 'data.response_key=response', 'data.truncation=right', 'optim.lr=2e-6', 'data.micro_batch_size_per_gpu=4', 'data.perbatch_cutoff_type=random_with_input_pad', 'model.partial_pretrain=Dream-org/Dream-v0-Base-7B', 'model.trust_remote_code=True', 'model.enable_gradient_checkpointing=True', 'trainer.default_local_dir=save', 'trainer.project_name=diff-verl', 'trainer.experiment_name=single_gpu_exp', 'trainer.logger=[console,wandb]', 'trainer.total_epochs=3']
+Traceback (most recent call last):
+  File "/home/luca/code/workspace/personal/Dream/src/trainer/standard_sft_trainer.py", line 971, in main
+    trainer.fit()
+  File "/home/luca/code/workspace/personal/Dream/src/trainer/standard_sft_trainer.py", line 912, in fit
+    metric = self.training_step(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/luca/code/workspace/personal/Dream/src/trainer/standard_sft_trainer.py", line 713, in training_step
+    self._compute_loss_and_backward(batch=micro_batch, do_backward=False)
+  File "/home/luca/code/workspace/personal/Dream/src/trainer/standard_sft_trainer.py", line 643, in _compute_loss_and_backward
+    shift_logits = torch.cat(
+                   ^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.32 GiB. GPU 0 has a total capacity of 23.48 GiB of which 1.95 GiB is free. Including non-PyTorch memory, this process has 19.26 GiB memory in use. Of the allocated memory 18.34 GiB is allocated by PyTorch, and 482.73 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <function _MultiProcessingDataLoaderIter._clean_up_worker at 0x7fffbbd53600>
+Traceback (most recent call last):
+  File "/home/luca/code/workspace/personal/Dream/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1658, in _clean_up_worker
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:
+Exception ignored in atexit callback: <function _MultiProcessingDataLoaderIter._clean_up_worker at 0x7fffbbd53600>
+Traceback (most recent call last):
+  File "/home/luca/code/workspace/personal/Dream/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1658, in _clean_up_worker
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/gf7b5x6vh2g3bq054lm5pj7zqzfx7vjc-python3-3.11.13/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:

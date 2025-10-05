@@ -348,7 +348,7 @@ class Dream(LM):
 
         input = batch
 
-        with torch.amp.autocast('cuda', dtype=torch.bfloat16):
+        with torch.amp.autocast('cuda', dtype=torch.float16):
             logits = self.model(input).logits
             # since bos always unmask, the first logits will not be used
             logits = torch.cat([logits[:,:1], logits[:, :-1]], dim=1)

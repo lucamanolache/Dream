@@ -1,0 +1,24 @@
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_setup.py:_flush():81] Current SDK version is 0.22.1
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_setup.py:_flush():81] Configure stats pid to 38621
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_setup.py:_flush():81] Loading settings from /home/luca/.config/wandb/settings
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_setup.py:_flush():81] Loading settings from /home/luca/code/workspace/personal/Dream/wandb/settings
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_init.py:setup_run_log_directory():705] Logging user logs to /home/luca/code/workspace/personal/Dream/wandb/run-20251004_134750-vva0ioh9/logs/debug.log
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_init.py:setup_run_log_directory():706] Logging internal logs to /home/luca/code/workspace/personal/Dream/wandb/run-20251004_134750-vva0ioh9/logs/debug-internal.log
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_init.py:init():832] calling init triggers
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_init.py:init():837] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-10-04 13:47:50,772 INFO    MainThread:38621 [wandb_init.py:init():880] starting backend
+2025-10-04 13:47:50,975 INFO    MainThread:38621 [wandb_init.py:init():883] sending inform_init request
+2025-10-04 13:47:50,978 INFO    MainThread:38621 [wandb_init.py:init():891] backend started and connected
+2025-10-04 13:47:50,979 INFO    MainThread:38621 [wandb_init.py:init():961] updated telemetry
+2025-10-04 13:47:50,981 INFO    MainThread:38621 [wandb_init.py:init():985] communicating run to backend with 90.0 second timeout
+2025-10-04 13:47:56,279 INFO    MainThread:38621 [wandb_init.py:init():1036] starting run threads in backend
+2025-10-04 13:47:56,312 INFO    MainThread:38621 [wandb_run.py:_console_start():2506] atexit reg
+2025-10-04 13:47:56,312 INFO    MainThread:38621 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-10-04 13:47:56,312 INFO    MainThread:38621 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-10-04 13:47:56,312 INFO    MainThread:38621 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-10-04 13:47:56,313 INFO    MainThread:38621 [wandb_init.py:init():1076] run started, returning control to user process
+2025-10-04 13:48:37,461 INFO    wandb-AsyncioManager-main:38621 [service_client.py:_forward_responses():80] Reached EOF.
+2025-10-04 13:48:37,461 INFO    wandb-AsyncioManager-main:38621 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2025-10-04 13:48:38,271 INFO    MainThread:38621 [wandb_run.py:_finish():2272] finishing run lucamanolache/diff-verl/vva0ioh9

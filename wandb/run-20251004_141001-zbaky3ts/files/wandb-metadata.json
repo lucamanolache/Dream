@@ -1,0 +1,46 @@
+{
+  "os":  "Linux-6.12.41-x86_64-with-glibc2.40",
+  "python":  "CPython 3.11.13",
+  "startedAt":  "2025-10-04T21:10:01.043227Z",
+  "args":  [
+    "diffusion.time_reweighting=cart",
+    "data.train_files=/home/luca/data/tulu3/train.parquet",
+    "data.val_files=/home/luca/data/gsm8k/test.parquet",
+    "data.max_length=1024",
+    "data.prompt_key=prompt",
+    "data.response_key=response",
+    "data.truncation=right",
+    "optim.lr=2e-6",
+    "data.micro_batch_size_per_gpu=1",
+    "data.perbatch_cutoff_type=random_with_input_pad",
+    "model.partial_pretrain=Dream-org/Dream-v0-Base-7B",
+    "model.trust_remote_code=True",
+    "model.enable_gradient_checkpointing=True",
+    "trainer.default_local_dir=save",
+    "trainer.project_name=diff-verl",
+    "trainer.experiment_name=single_gpu_exp",
+    "trainer.logger=[console,wandb]",
+    "trainer.total_epochs=3"
+  ],
+  "program":  "-m src.trainer.standard_sft_trainer",
+  "git":  {
+    "remote":  "git@github.com:lucamanolache/Dream.git",
+    "commit":  "fd91b8f1d47c5cbe4a8a1674fd9b98045e79d9db"
+  },
+  "email":  "luca.manolache@berkeley.edu",
+  "root":  "/home/luca/code/workspace/personal/Dream",
+  "host":  "desktop",
+  "executable":  "/home/luca/code/workspace/personal/Dream/.venv/bin/python",
+  "cpu_count":  16,
+  "cpu_count_logical":  32,
+  "disk":  {
+    "/":  {
+      "total":  "1860808818688",
+      "used":  "71188541440"
+    }
+  },
+  "memory":  {
+    "total":  "98651947008"
+  },
+  "writerId":  "vvzuqambeuj9dgf9iumyrvfqr4ano1a5"
+}

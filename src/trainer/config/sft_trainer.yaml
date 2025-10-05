@@ -2,8 +2,8 @@ data:
   perbatch_cutoff: False
   perbatch_cutoff_type: random
   collate_fn_type: optimized
-  train_batch_size: 256
-  micro_batch_size_per_gpu: 4  # this is also val batch size
+  train_batch_size: 32  # Reduced from 256 to 64
+  micro_batch_size_per_gpu: 2  # Reduced from 4 to 2
   train_files: ~/data/gsm8k/train.parquet
   val_files: ~/data/gsm8k/test.parquet
   tokenized: False
@@ -29,6 +29,9 @@ model:
   target_modules: all-linear  # Target modules for LoRA adaptation
   use_liger: False
   attention_dropout: 0.0
+  # Quantization settings for 16-bit training
+  torch_dtype: float16  # Use 16-bit quantization for training
+  autocast_dtype: float16  # Use 16-bit autocast for forward pass
 optim:
   lr: 1e-5
   betas: [0.9, 0.95]
